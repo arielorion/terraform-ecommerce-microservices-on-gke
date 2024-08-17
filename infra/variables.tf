@@ -34,3 +34,18 @@ variable "resource_name_suffix" {
   It shoud not end with a dash.
   EOT
 }
+
+variable "network" {
+  type        = string
+  description = "The Google Cloud network"
+}
+
+variable "subnetwork_usa" {
+  type        = string
+  description = "The Google Cloud USA subnetwork"
+}
+
+variable "subnetwork_europa" {
+  type        = string
+  description = "The Google Cloud Europa subnetwork"
+}

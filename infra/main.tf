@@ -86,6 +86,8 @@ resource "google_container_cluster" "my_cluster_usa" {
   location            = "us-west1"
   enable_autopilot    = true
   project             = var.project_id
+  network             = var.network
+  subnetwork          = var.subnetwork_usa 
   resource_labels     = var.labels
   deletion_protection = false
   depends_on = [
@@ -109,6 +111,8 @@ resource "google_container_cluster" "my_cluster_europe" {
   enable_autopilot    = true
   project             = var.project_id
   resource_labels     = var.labels
+  network             = var.network
+  subnetwork          = var.subnetwork_europa 
   deletion_protection = false
   depends_on = [
     module.enable_base_google_apis
@@ -130,6 +134,8 @@ resource "google_container_cluster" "my_cluster_config" {
   location            = "us-west1"
   enable_autopilot    = true
   project             = var.project_id
+  network             = var.network
+  subnetwork          = var.subnetwork_usa 
   resource_labels     = var.labels
   deletion_protection = false
   depends_on = [
